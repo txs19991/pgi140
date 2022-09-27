@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>pgi140: pgi_control.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">pgi140
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_808b05457389ff556247ee0c857acd5a.html">pgi140</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">pgi_control.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PGI_CONTROL_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define PGI_CONTROL_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;pgi140/modbus_rtu_base.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define SPEED 50</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define FORCE 20</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define CURRENTLOW 100</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define CURRENTHIGH 1000</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classpgi.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="classpgi.html">pgi</a> : <span class="keyword">public</span> <a class="code" href="classmodbusrtu.html">modbusrtu</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keyword">using</span> modbusrtu::modbusrtu;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classpgi.html#ad5e30484df6ace2fdaf81c33b39dff5e">initSingle</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classpgi.html#a1480a453db50bab3f8e0528a2217b8bf">initDouble</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classpgi.html#aa805c066fbf29f1467c9a0641fee9303">setall</a>(uint16_t position, <span class="keywordtype">bool</span> block, uint16_t force = FORCE, uint16_t speed = SPEED);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classpgi.html#ab01958764711eec18280e96a306822a5">setPos</a>(uint16_t command);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classpgi.html#ab38999f0c170aba9dc18b7feb72ec92b">setForce</a>(uint16_t command);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classpgi.html#ab79507479034cc6d34d188b3e7e8ecbd">setSpeed</a>(uint16_t command);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classpgi.html#a83bfff51830b2b9387242496f2cde86a">isInit</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classpgi.html#a4f2662f8434e655350b92a22dcf1d10b">isBusy</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classpgi.html#a48868833c17f71497a705e92389f1f56">isGrip</a>();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classpgi.html#a0af8f6bc57acc5445aa196d924d59ee4">isGripCur</a>();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classpgi.html#a181943497eb909c7662c7f54e010a9a0">isDrop</a>();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classpgi.html#a9b76408322279a3de37a3b2dadcb9e0c">isDropCur</a>();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classpgi.html#aed26c5d2cfdc8b1b607b8393cd779de0">setcommand</a>(uint8_t *out_buf, uint8_t *in_buf, std::string command);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classpgi.html#ab0b87459b7c0b30c135201fd3a48d668">readcommand</a>(uint8_t *out_buf, uint8_t *in_buf, std::string command);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  uint16_t <a class="code" href="classpgi.html#a18c0a94cad3d4d1f67a9e241a1819d75">getPos</a>();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  uint16_t getCurrent();</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;};</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclasspgi_html_a18c0a94cad3d4d1f67a9e241a1819d75"><div class="ttname"><a href="classpgi.html#a18c0a94cad3d4d1f67a9e241a1819d75">pgi::getPos</a></div><div class="ttdeci">uint16_t getPos()</div><div class="ttdoc">获取夹爪当前位置</div><div class="ttdef"><b>Definition:</b> pgi_control.cpp:122</div></div>
+<div class="ttc" id="aclasspgi_html_ad5e30484df6ace2fdaf81c33b39dff5e"><div class="ttname"><a href="classpgi.html#ad5e30484df6ace2fdaf81c33b39dff5e">pgi::initSingle</a></div><div class="ttdeci">void initSingle()</div><div class="ttdoc">夹爪单向初始化</div><div class="ttdef"><b>Definition:</b> pgi_control.cpp:3</div></div>
+<div class="ttc" id="aclassmodbusrtu_html"><div class="ttname"><a href="classmodbusrtu.html">modbusrtu</a></div><div class="ttdef"><b>Definition:</b> modbus_rtu_base.h:9</div></div>
+<div class="ttc" id="aclasspgi_html_ab01958764711eec18280e96a306822a5"><div class="ttname"><a href="classpgi.html#ab01958764711eec18280e96a306822a5">pgi::setPos</a></div><div class="ttdeci">void setPos(uint16_t command)</div><div class="ttdoc">设定夹爪目标位置</div><div class="ttdef"><b>Definition:</b> pgi_control.cpp:40</div></div>
+<div class="ttc" id="aclasspgi_html_a0af8f6bc57acc5445aa196d924d59ee4"><div class="ttname"><a href="classpgi.html#a0af8f6bc57acc5445aa196d924d59ee4">pgi::isGripCur</a></div><div class="ttdeci">bool isGripCur()</div><div class="ttdoc">根据电流判断是否夹持物体</div><div class="ttdef"><b>Definition:</b> pgi_control.cpp:85</div></div>
+<div class="ttc" id="aclasspgi_html_a4f2662f8434e655350b92a22dcf1d10b"><div class="ttname"><a href="classpgi.html#a4f2662f8434e655350b92a22dcf1d10b">pgi::isBusy</a></div><div class="ttdeci">bool isBusy()</div><div class="ttdoc">判断夹爪是否运动</div><div class="ttdef"><b>Definition:</b> pgi_control.cpp:68</div></div>
+<div class="ttc" id="aclasspgi_html_a9b76408322279a3de37a3b2dadcb9e0c"><div class="ttname"><a href="classpgi.html#a9b76408322279a3de37a3b2dadcb9e0c">pgi::isDropCur</a></div><div class="ttdeci">bool isDropCur()</div><div class="ttdoc">根据电流判断是否掉落</div><div class="ttdef"><b>Definition:</b> pgi_control.cpp:113</div></div>
+<div class="ttc" id="aclasspgi_html_a48868833c17f71497a705e92389f1f56"><div class="ttname"><a href="classpgi.html#a48868833c17f71497a705e92389f1f56">pgi::isGrip</a></div><div class="ttdeci">bool isGrip()</div><div class="ttdoc">是否夹持物体</div><div class="ttdef"><b>Definition:</b> pgi_control.cpp:76</div></div>
+<div class="ttc" id="aclasspgi_html"><div class="ttname"><a href="classpgi.html">pgi</a></div><div class="ttdef"><b>Definition:</b> pgi_control.h:10</div></div>
+<div class="ttc" id="aclasspgi_html_a1480a453db50bab3f8e0528a2217b8bf"><div class="ttname"><a href="classpgi.html#a1480a453db50bab3f8e0528a2217b8bf">pgi::initDouble</a></div><div class="ttdeci">void initDouble()</div><div class="ttdoc">夹爪双向初始化</div><div class="ttdef"><b>Definition:</b> pgi_control.cpp:13</div></div>
+<div class="ttc" id="aclasspgi_html_ab38999f0c170aba9dc18b7feb72ec92b"><div class="ttname"><a href="classpgi.html#ab38999f0c170aba9dc18b7feb72ec92b">pgi::setForce</a></div><div class="ttdeci">void setForce(uint16_t command)</div><div class="ttdoc">设定夹爪闭合力</div><div class="ttdef"><b>Definition:</b> pgi_control.cpp:47</div></div>
+<div class="ttc" id="aclasspgi_html_a181943497eb909c7662c7f54e010a9a0"><div class="ttname"><a href="classpgi.html#a181943497eb909c7662c7f54e010a9a0">pgi::isDrop</a></div><div class="ttdeci">bool isDrop()</div><div class="ttdoc">夹持物体是否掉落</div><div class="ttdef"><b>Definition:</b> pgi_control.cpp:96</div></div>
+<div class="ttc" id="aclasspgi_html_a83bfff51830b2b9387242496f2cde86a"><div class="ttname"><a href="classpgi.html#a83bfff51830b2b9387242496f2cde86a">pgi::isInit</a></div><div class="ttdeci">bool isInit()</div><div class="ttdoc">判断是否初始化</div><div class="ttdef"><b>Definition:</b> pgi_control.cpp:60</div></div>
+<div class="ttc" id="aclasspgi_html_aa805c066fbf29f1467c9a0641fee9303"><div class="ttname"><a href="classpgi.html#aa805c066fbf29f1467c9a0641fee9303">pgi::setall</a></div><div class="ttdeci">void setall(uint16_t position, bool block, uint16_t force=FORCE, uint16_t speed=SPEED)</div><div class="ttdoc">设定夹爪位置，速度，闭合力和是否阻塞</div><div class="ttdef"><b>Definition:</b> pgi_control.cpp:23</div></div>
+<div class="ttc" id="aclasspgi_html_aed26c5d2cfdc8b1b607b8393cd779de0"><div class="ttname"><a href="classpgi.html#aed26c5d2cfdc8b1b607b8393cd779de0">pgi::setcommand</a></div><div class="ttdeci">void setcommand(uint8_t *out_buf, uint8_t *in_buf, std::string command)</div><div class="ttdoc">内部函数，用于写入寄存器</div><div class="ttdef"><b>Definition:</b> pgi_control.cpp:138</div></div>
+<div class="ttc" id="aclasspgi_html_ab79507479034cc6d34d188b3e7e8ecbd"><div class="ttname"><a href="classpgi.html#ab79507479034cc6d34d188b3e7e8ecbd">pgi::setSpeed</a></div><div class="ttdeci">void setSpeed(uint16_t command)</div><div class="ttdoc">设定夹爪运动速度</div><div class="ttdef"><b>Definition:</b> pgi_control.cpp:53</div></div>
+<div class="ttc" id="aclasspgi_html_ab0b87459b7c0b30c135201fd3a48d668"><div class="ttname"><a href="classpgi.html#ab0b87459b7c0b30c135201fd3a48d668">pgi::readcommand</a></div><div class="ttdeci">void readcommand(uint8_t *out_buf, uint8_t *in_buf, std::string command)</div><div class="ttdoc">内部函数，用于读取寄存器</div><div class="ttdef"><b>Definition:</b> pgi_control.cpp:152</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

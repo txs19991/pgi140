@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>pgi140: 机器人化学家_机械臂部分</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">pgi140
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">机器人化学家_机械臂部分 </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1><a class="anchor" id="autotoc_md1"></a>
+启动流程</h1>
+<ol type="1">
+<li><p class="startli">启动机械臂ROS驱动(需要指定robot_ip,robot_description_file(可选)):</p>
+<p class="startli">```bash roslaunch ur_robot_driver ur5e_bringup.launch robot_ip:=192.168.131.101 robot_description_file:=$(rospack find ur_description)/launch/load_ur5e_tfsensor_pgi140.launch ```</p>
+</li>
+<li><p class="startli">启动moveit!:</p>
+<p class="startli">```bash roslaunch ur5e_moveit_config ur5e_moveit_planning_execution.launch <br  />
+ ```</p>
+</li>
+<li><p class="startli">启动Rviz GUI(可选):</p>
+<p class="startli">```bash roslaunch ur5e_moveit_config moveit_rviz.launch rviz_config:=$(rospack find ur5e_moveit_config)/launch/moveit.rviz <br  />
+ ```</p>
+</li>
+<li><p class="startli">启动视觉重定位：</p>
+<p class="startli">```bash rosrun locator cvs5 ```</p>
+</li>
+<li><p class="startli">启动机械臂操控程序:</p>
+<p class="startli">```bash roslaunch chemicalrobot_arm chemicalrobot_arm.launch ```</p>
+<p class="startli">或启动机械臂记录位姿程序:</p>
+</li>
+</ol>
+<div class="fragment"><div class="line">roslaunch chemicalrobot_arm record.launch</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md2"></a>
+文件结构</h1>
+<blockquote class="doxtable">
+<p>chemicalrobot_arm 机械臂操作的包 </p><blockquote class="doxtable">
+<p>src <br  />
+ </p><blockquote class="doxtable">
+<p>motion_planning.cpp 机械臂响应指令和反馈，轨迹规划，操作，异常处理等函数 <br  />
+ motion_planning_util.cpp 机械臂载入位姿信息，内部处理等函数 <br  />
+ dashboard.cpp UR5e远程启动和程序加载，气动夹爪和舵机控制函数 <br  />
+ record.cpp 路径点记录函数 </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote class="doxtable">
+<blockquote class="doxtable">
+<p>scripts <br  />
+ </p><blockquote class="doxtable">
+<p>fake_command.py 模拟task_manager，用于向机械臂发布操作指令 <br  />
+ fake_camerapose.py 模拟相机节点，用于向机械臂发布标签位姿 <br  />
+ </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote class="doxtable">
+<blockquote class="doxtable">
+<p>data 用于存放各站点的位姿信息 </p>
+</blockquote>
+</blockquote>
+<blockquote class="doxtable">
+<p>pgi140 夹爪模型和控制的包 </p><blockquote class="doxtable">
+<p>src </p><blockquote class="doxtable">
+<p>pgi_control.cpp 夹爪控制函数 <br  />
+ pgi_test.cpp 夹爪控制测试函数 <br  />
+ </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote class="doxtable">
+<p>robotiq_ft_sensor 力传感器ros包 <br  />
+ universal_robot UR5e的urdf文件，moveit配置等 Universal_Robots_ROS_controllers_cartesian UR5e笛卡尔控制器 Universal_Robots_ROS_Driver UR5e的ROS驱动 </p>
+</blockquote>
+<h1><a class="anchor" id="autotoc_md3"></a>
+环境需求</h1>
+<ol type="1">
+<li>需要绑定usb串口名，夹爪为/dev/PGI，气动夹爪和舵机为/dev/GRIPPER，力传感器为FT_SENSOR</li>
+<li>为了能够正常生成日志，需要在/etc/profile中添加export DATE=$(date +Y_m_d) <br  />
+</li>
+<li>ros的依赖库详见各个ros包的package.xml文件 <br  />
+ </li>
+</ol>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

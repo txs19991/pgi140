@@ -1,0 +1,292 @@
+\hypertarget{classpgi}{}\doxysubsection{pgi类 参考}
+\label{classpgi}\index{pgi@{pgi}}
+
+
+类 pgi 继承关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{classpgi__inherit__graph}
+\end{center}
+\end{figure}
+
+
+pgi 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{classpgi__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classpgi_ad5e30484df6ace2fdaf81c33b39dff5e}{init\+Single}} ()
+\begin{DoxyCompactList}\small\item\em 夹爪单向初始化 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classpgi_a1480a453db50bab3f8e0528a2217b8bf}{init\+Double}} ()
+\begin{DoxyCompactList}\small\item\em 夹爪双向初始化 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classpgi_aa805c066fbf29f1467c9a0641fee9303}{setall}} (uint16\+\_\+t position, bool block, uint16\+\_\+t force=F\+O\+R\+CE, uint16\+\_\+t speed=S\+P\+E\+ED)
+\begin{DoxyCompactList}\small\item\em 设定夹爪位置，速度，闭合力和是否阻塞 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classpgi_ab01958764711eec18280e96a306822a5}{set\+Pos}} (uint16\+\_\+t command)
+\begin{DoxyCompactList}\small\item\em 设定夹爪目标位置 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classpgi_ab38999f0c170aba9dc18b7feb72ec92b}{set\+Force}} (uint16\+\_\+t command)
+\begin{DoxyCompactList}\small\item\em 设定夹爪闭合力 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classpgi_ab79507479034cc6d34d188b3e7e8ecbd}{set\+Speed}} (uint16\+\_\+t command)
+\begin{DoxyCompactList}\small\item\em 设定夹爪运动速度 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classpgi_a83bfff51830b2b9387242496f2cde86a}{is\+Init}} ()
+\begin{DoxyCompactList}\small\item\em 判断是否初始化 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classpgi_a4f2662f8434e655350b92a22dcf1d10b}{is\+Busy}} ()
+\begin{DoxyCompactList}\small\item\em 判断夹爪是否运动 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classpgi_a48868833c17f71497a705e92389f1f56}{is\+Grip}} ()
+\begin{DoxyCompactList}\small\item\em 是否夹持物体 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classpgi_a0af8f6bc57acc5445aa196d924d59ee4}{is\+Grip\+Cur}} ()
+\begin{DoxyCompactList}\small\item\em 根据电流判断是否夹持物体 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classpgi_a181943497eb909c7662c7f54e010a9a0}{is\+Drop}} ()
+\begin{DoxyCompactList}\small\item\em 夹持物体是否掉落 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classpgi_a9b76408322279a3de37a3b2dadcb9e0c}{is\+Drop\+Cur}} ()
+\begin{DoxyCompactList}\small\item\em 根据电流判断是否掉落 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classpgi_aed26c5d2cfdc8b1b607b8393cd779de0}{setcommand}} (uint8\+\_\+t $\ast$out\+\_\+buf, uint8\+\_\+t $\ast$in\+\_\+buf, std\+::string command)
+\begin{DoxyCompactList}\small\item\em 内部函数，用于写入寄存器 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classpgi_ab0b87459b7c0b30c135201fd3a48d668}{readcommand}} (uint8\+\_\+t $\ast$out\+\_\+buf, uint8\+\_\+t $\ast$in\+\_\+buf, std\+::string command)
+\begin{DoxyCompactList}\small\item\em 内部函数，用于读取寄存器 \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{classpgi_a18c0a94cad3d4d1f67a9e241a1819d75}{get\+Pos}} ()
+\begin{DoxyCompactList}\small\item\em 获取夹爪当前位置 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classpgi_a19e29ceeb48717613b73cd9249c4e336}\label{classpgi_a19e29ceeb48717613b73cd9249c4e336}} 
+{\bfseries modbusrtu} (std\+::string dev, uint32\+\_\+t baudrate)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{成员函数说明}
+\mbox{\Hypertarget{classpgi_a18c0a94cad3d4d1f67a9e241a1819d75}\label{classpgi_a18c0a94cad3d4d1f67a9e241a1819d75}} 
+\index{pgi@{pgi}!getPos@{getPos}}
+\index{getPos@{getPos}!pgi@{pgi}}
+\doxyparagraph{\texorpdfstring{getPos()}{getPos()}}
+{\footnotesize\ttfamily uint16\+\_\+t pgi\+::get\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+获取夹爪当前位置 
+
+\begin{DoxyReturn}{返回}
+uint16\+\_\+t 夹爪当前位置 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpgi_a1480a453db50bab3f8e0528a2217b8bf}\label{classpgi_a1480a453db50bab3f8e0528a2217b8bf}} 
+\index{pgi@{pgi}!initDouble@{initDouble}}
+\index{initDouble@{initDouble}!pgi@{pgi}}
+\doxyparagraph{\texorpdfstring{initDouble()}{initDouble()}}
+{\footnotesize\ttfamily void pgi\+::init\+Double (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+夹爪双向初始化 
+
+\mbox{\Hypertarget{classpgi_ad5e30484df6ace2fdaf81c33b39dff5e}\label{classpgi_ad5e30484df6ace2fdaf81c33b39dff5e}} 
+\index{pgi@{pgi}!initSingle@{initSingle}}
+\index{initSingle@{initSingle}!pgi@{pgi}}
+\doxyparagraph{\texorpdfstring{initSingle()}{initSingle()}}
+{\footnotesize\ttfamily void pgi\+::init\+Single (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+夹爪单向初始化 
+
+\mbox{\Hypertarget{classpgi_a4f2662f8434e655350b92a22dcf1d10b}\label{classpgi_a4f2662f8434e655350b92a22dcf1d10b}} 
+\index{pgi@{pgi}!isBusy@{isBusy}}
+\index{isBusy@{isBusy}!pgi@{pgi}}
+\doxyparagraph{\texorpdfstring{isBusy()}{isBusy()}}
+{\footnotesize\ttfamily bool pgi\+::is\+Busy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+判断夹爪是否运动 
+
+\begin{DoxyReturn}{返回}
+true 正在运动 
+
+false 空闲 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpgi_a181943497eb909c7662c7f54e010a9a0}\label{classpgi_a181943497eb909c7662c7f54e010a9a0}} 
+\index{pgi@{pgi}!isDrop@{isDrop}}
+\index{isDrop@{isDrop}!pgi@{pgi}}
+\doxyparagraph{\texorpdfstring{isDrop()}{isDrop()}}
+{\footnotesize\ttfamily bool pgi\+::is\+Drop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+夹持物体是否掉落 
+
+\begin{DoxyReturn}{返回}
+true 掉落 
+
+false 未掉落 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpgi_a9b76408322279a3de37a3b2dadcb9e0c}\label{classpgi_a9b76408322279a3de37a3b2dadcb9e0c}} 
+\index{pgi@{pgi}!isDropCur@{isDropCur}}
+\index{isDropCur@{isDropCur}!pgi@{pgi}}
+\doxyparagraph{\texorpdfstring{isDropCur()}{isDropCur()}}
+{\footnotesize\ttfamily bool pgi\+::is\+Drop\+Cur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+根据电流判断是否掉落 
+
+\begin{DoxyReturn}{返回}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpgi_a48868833c17f71497a705e92389f1f56}\label{classpgi_a48868833c17f71497a705e92389f1f56}} 
+\index{pgi@{pgi}!isGrip@{isGrip}}
+\index{isGrip@{isGrip}!pgi@{pgi}}
+\doxyparagraph{\texorpdfstring{isGrip()}{isGrip()}}
+{\footnotesize\ttfamily bool pgi\+::is\+Grip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+是否夹持物体 
+
+\begin{DoxyReturn}{返回}
+true 有夹持 
+
+false 没有夹持 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpgi_a0af8f6bc57acc5445aa196d924d59ee4}\label{classpgi_a0af8f6bc57acc5445aa196d924d59ee4}} 
+\index{pgi@{pgi}!isGripCur@{isGripCur}}
+\index{isGripCur@{isGripCur}!pgi@{pgi}}
+\doxyparagraph{\texorpdfstring{isGripCur()}{isGripCur()}}
+{\footnotesize\ttfamily bool pgi\+::is\+Grip\+Cur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+根据电流判断是否夹持物体 
+
+\begin{DoxyReturn}{返回}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpgi_a83bfff51830b2b9387242496f2cde86a}\label{classpgi_a83bfff51830b2b9387242496f2cde86a}} 
+\index{pgi@{pgi}!isInit@{isInit}}
+\index{isInit@{isInit}!pgi@{pgi}}
+\doxyparagraph{\texorpdfstring{isInit()}{isInit()}}
+{\footnotesize\ttfamily bool pgi\+::is\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+判断是否初始化 
+
+\begin{DoxyReturn}{返回}
+true 已初始化 
+
+false 未初始化 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpgi_ab0b87459b7c0b30c135201fd3a48d668}\label{classpgi_ab0b87459b7c0b30c135201fd3a48d668}} 
+\index{pgi@{pgi}!readcommand@{readcommand}}
+\index{readcommand@{readcommand}!pgi@{pgi}}
+\doxyparagraph{\texorpdfstring{readcommand()}{readcommand()}}
+{\footnotesize\ttfamily void pgi\+::readcommand (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{out\+\_\+buf,  }\item[{uint8\+\_\+t $\ast$}]{in\+\_\+buf,  }\item[{std\+::string}]{command }\end{DoxyParamCaption})}
+
+
+
+内部函数，用于读取寄存器 
+
+
+\begin{DoxyParams}{参数}
+{\em out\+\_\+buf} & \\
+\hline
+{\em in\+\_\+buf} & \\
+\hline
+{\em command} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpgi_aa805c066fbf29f1467c9a0641fee9303}\label{classpgi_aa805c066fbf29f1467c9a0641fee9303}} 
+\index{pgi@{pgi}!setall@{setall}}
+\index{setall@{setall}!pgi@{pgi}}
+\doxyparagraph{\texorpdfstring{setall()}{setall()}}
+{\footnotesize\ttfamily void pgi\+::setall (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{position,  }\item[{bool}]{block,  }\item[{uint16\+\_\+t}]{force = {\ttfamily FORCE},  }\item[{uint16\+\_\+t}]{speed = {\ttfamily SPEED} }\end{DoxyParamCaption})}
+
+
+
+设定夹爪位置，速度，闭合力和是否阻塞 
+
+
+\begin{DoxyParams}{参数}
+{\em position} & 目标位置 \\
+\hline
+{\em block} & 若为真则阻塞直至停止运动 \\
+\hline
+{\em force} & 设定闭合力 \\
+\hline
+{\em speed} & 设定运动速度 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpgi_aed26c5d2cfdc8b1b607b8393cd779de0}\label{classpgi_aed26c5d2cfdc8b1b607b8393cd779de0}} 
+\index{pgi@{pgi}!setcommand@{setcommand}}
+\index{setcommand@{setcommand}!pgi@{pgi}}
+\doxyparagraph{\texorpdfstring{setcommand()}{setcommand()}}
+{\footnotesize\ttfamily void pgi\+::setcommand (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{out\+\_\+buf,  }\item[{uint8\+\_\+t $\ast$}]{in\+\_\+buf,  }\item[{std\+::string}]{command }\end{DoxyParamCaption})}
+
+
+
+内部函数，用于写入寄存器 
+
+
+\begin{DoxyParams}{参数}
+{\em out\+\_\+buf} & \\
+\hline
+{\em in\+\_\+buf} & \\
+\hline
+{\em command} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpgi_ab38999f0c170aba9dc18b7feb72ec92b}\label{classpgi_ab38999f0c170aba9dc18b7feb72ec92b}} 
+\index{pgi@{pgi}!setForce@{setForce}}
+\index{setForce@{setForce}!pgi@{pgi}}
+\doxyparagraph{\texorpdfstring{setForce()}{setForce()}}
+{\footnotesize\ttfamily void pgi\+::set\+Force (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{command }\end{DoxyParamCaption})}
+
+
+
+设定夹爪闭合力 
+
+
+\begin{DoxyParams}{参数}
+{\em command} & 闭合力 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpgi_ab01958764711eec18280e96a306822a5}\label{classpgi_ab01958764711eec18280e96a306822a5}} 
+\index{pgi@{pgi}!setPos@{setPos}}
+\index{setPos@{setPos}!pgi@{pgi}}
+\doxyparagraph{\texorpdfstring{setPos()}{setPos()}}
+{\footnotesize\ttfamily void pgi\+::set\+Pos (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{command }\end{DoxyParamCaption})}
+
+
+
+设定夹爪目标位置 
+
+
+\begin{DoxyParams}{参数}
+{\em command} & 目标位置 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpgi_ab79507479034cc6d34d188b3e7e8ecbd}\label{classpgi_ab79507479034cc6d34d188b3e7e8ecbd}} 
+\index{pgi@{pgi}!setSpeed@{setSpeed}}
+\index{setSpeed@{setSpeed}!pgi@{pgi}}
+\doxyparagraph{\texorpdfstring{setSpeed()}{setSpeed()}}
+{\footnotesize\ttfamily void pgi\+::set\+Speed (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{command }\end{DoxyParamCaption})}
+
+
+
+设定夹爪运动速度 
+
+
+\begin{DoxyParams}{参数}
+{\em command} & 运动速度 \\
+\hline
+\end{DoxyParams}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+pgi\+\_\+control.\+h\item 
+pgi\+\_\+control.\+cpp\end{DoxyCompactItemize}

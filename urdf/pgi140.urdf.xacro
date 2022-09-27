@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="pgi140">
+    <xacro:macro name="pgi140" params="parent prefix *origin">
+
+        <!-- joint connct to robot -->
+        <joint name="${prefix}pgi_fix" type="fixed">
+                <xacro:insert_block name="origin" />
+                <parent link="${parent}" />
+                <child link="${prefix}origin_link" />
+        </joint>
+
+        <!-- gripper body -->
+        <link name="${prefix}origin_link">
+            <inertial>
+                <origin xyz="-0.00015465 -2.2241E-05 0.043187" rpy="0 0 0" />
+                <mass value="0.44125" />
+                <inertia ixx="0.00018709" ixy="-5.2073E-13" ixz="2.8571E-07" iyy="0.00037837" iyz="-1.6755E-08" izz="0.00044482" />
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://pgi140/meshes/origin_link.STL" />
+                </geometry>
+                <material name="PGI_Black">
+                    <color rgba="0.2 0.2 0.2 1.0" />
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://pgi140/meshes/origin_link.STL" />
+                </geometry>
+            </collision>
+        </link>
+
+        <!-- gripper finger1 -->
+        <link name="${prefix}finger1_link">
+            <inertial>
+                <origin xyz="-0.021 -4.1135E-05 -0.0077742" rpy="0 0 0" />
+                <mass value="0.01357" />
+                <inertia ixx="5.6166E-07" ixy="-8.7508E-14" ixz="-1.278E-13" iyy="2.3543E-06" iyz="8.019E-09" izz="2.7234E-06" />
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://pgi140/meshes/finger1_link.STL" />
+                </geometry>
+                <material name="DH_Gray">
+                    <color rgba="0.4 0.4 0.4 1.0" />
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://pgi140/meshes/finger1_link.STL" />
+                </geometry>
+            </collision>
+        </link>
+        <!-- <joint name="${prefix}finger1" type="prismatic"> -->
+        <joint name="${prefix}finger1" type="fixed">
+            <origin xyz="-0.001 -0.01815 0.0955" rpy="0 0 3.1416" />
+            <parent link="${prefix}origin_link" />
+            <child link="${prefix}finger1_link" />
+            <axis xyz="1 0 0" />
+            <!-- <limit lower="0" upper="0.04" effort="140" velocity="0.11" />
+            <dynamics damping="1" friction="2" /> -->
+        </joint>
+
+        <!-- gripper finger2 -->
+        <link name="${prefix}finger2_link">
+            <inertial>
+                <origin xyz="-0.021 -4.1135E-05 -0.0077742" rpy="0 0 0" />
+                <mass value="0.01357" />
+                <inertia ixx="5.6166E-07" ixy="-8.7508E-14" ixz="-1.278E-13" iyy="2.3543E-06" iyz="8.019E-09" izz="2.7234E-06" />
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://pgi140/meshes/finger2_link.STL" />
+                </geometry>
+                <material name="DH_Gray">
+                    <!-- <color rgba="1 1 1 1" /> -->
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://pgi140/meshes/finger2_link.STL" />
+                </geometry>
+            </collision>
+        </link>
+        <!-- <joint name="${prefix}finger2" type="prismatic"> -->
+        <joint name="${prefix}finger2" type="fixed">
+            <origin xyz="0.001 0.01815 0.0955" rpy="0 0 0" />
+            <parent link="${prefix}origin_link" />
+            <child link="${prefix}finger2_link" />
+            <axis xyz="1 0 0" />
+            <!-- <limit lower="0" upper="0.04" effort="140" velocity="0.11" />
+            <dynamics damping="1" friction="2" /> -->
+        </joint>
+
+    </xacro:macro>
+</robot>
