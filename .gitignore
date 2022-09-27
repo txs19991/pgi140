@@ -1,3 +1,8 @@
+**/build
+**/devel
+**/.DS_STORE
+**/.vscode
+
 # Prerequisites
 *.d
 
